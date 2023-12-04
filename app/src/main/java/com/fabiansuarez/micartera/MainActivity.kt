@@ -1,5 +1,6 @@
 package com.fabiansuarez.micartera
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
@@ -25,12 +26,15 @@ class MainActivity : AppCompatActivity() {
         binding.bottomNavigationView.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.nav_menu_1 -> openFragment(HomeFragment())
-                R.id.nav_menu_2 ->openFragment(DetailAccountFragment())
-                R.id.nav_menu_3 -> Toast.makeText(this, "MENU 3",Toast.LENGTH_SHORT).show()
-                R.id.nav_menu_4 -> Toast.makeText(this, "MENU 4",Toast.LENGTH_SHORT).show()
-                R.id.nav_menu_5 -> Toast.makeText(this, "MENU 5",Toast.LENGTH_SHORT).show()
+                R.id.nav_menu_2 -> openFragment(DetailAccountFragment())
+                R.id.nav_menu_3 -> Toast.makeText(this, "MENU 3", Toast.LENGTH_SHORT).show()
+                R.id.nav_menu_4 -> Toast.makeText(this, "MENU 4", Toast.LENGTH_SHORT).show()
+                R.id.nav_menu_5 -> Toast.makeText(this, "MENU 5", Toast.LENGTH_SHORT).show()
             }
             true
+        }
+        binding.fabPlus.setOnClickListener {
+            startActivity(Intent(applicationContext, MovementFormActivity::class.java))
         }
 
         fragmentManager = supportFragmentManager
