@@ -13,10 +13,16 @@
         android:theme="@style/Theme.MiCartera"
         tools:targetApi="31">
         <activity
-            android:name=".MovementFormActivity"
+            android:name=".CategoryFormActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".CategoryListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AccountFormActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AccountListActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,6 +30,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".MovementFormActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
     </application>
 
 </manifest>
