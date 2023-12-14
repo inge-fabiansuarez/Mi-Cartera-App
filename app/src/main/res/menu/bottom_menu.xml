@@ -19,6 +19,6 @@
         android:title="Home 3" />
     <item
         android:id="@+id/nav_menu_5"
-        android:icon="@drawable/ic_baseline_add_24"
-        android:title="Home 4" />
+        android:icon="@drawable/ic_account_wallet_24"
+        android:title="@string/accounts" />
 </menu>

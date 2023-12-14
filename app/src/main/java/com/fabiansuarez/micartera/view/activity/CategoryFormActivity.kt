@@ -1,7 +1,8 @@
-package com.fabiansuarez.micartera
+package com.fabiansuarez.micartera.view.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.fabiansuarez.micartera.R
 
 class CategoryFormActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

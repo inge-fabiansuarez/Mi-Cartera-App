@@ -1,9 +1,10 @@
-package com.fabiansuarez.micartera
+package com.fabiansuarez.micartera.view.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
+import com.fabiansuarez.micartera.R
 import com.fabiansuarez.micartera.databinding.ActivityCategoryListBinding
 
 class CategoryListActivity : AppCompatActivity() {

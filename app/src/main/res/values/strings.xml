@@ -58,4 +58,8 @@
     <string name="name">Name</string>
     <string name="categories">Categories</string>
     <string name="add_category">Add Category</string>
+    <string name="cash">Efectivo</string>
+    <string name="debit_card">Tarjeta Debito</string>
+    <string name="saved">Saved!!!</string>
+    <string name="error">Error!!!</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.fabiansuarez.micartera
+package com.fabiansuarez.micartera.viewmodel
 
 import androidx.lifecycle.ViewModel
 

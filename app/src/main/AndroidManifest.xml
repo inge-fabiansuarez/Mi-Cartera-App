@@ -13,16 +13,24 @@
         android:theme="@style/Theme.MiCartera"
         tools:targetApi="31">
         <activity
-            android:name=".CategoryFormActivity"
+            android:name=".view.activity.CategoryFormActivity"
             android:exported="false" />
         <activity
-            android:name=".CategoryListActivity"
+            android:name=".view.activity.CategoryListActivity"
             android:exported="false" />
         <activity
-            android:name=".AccountFormActivity"
+            android:name=".view.activity.AccountFormActivity"
             android:exported="false" />
         <activity
-            android:name=".AccountListActivity"
+            android:name=".view.activity.AccountListActivity"
+            android:exported="true">
+
+        </activity>
+        <activity
+            android:name=".view.activity.MovementFormActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,12 +38,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".MovementFormActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="true" />
     </application>
 
 </manifest>

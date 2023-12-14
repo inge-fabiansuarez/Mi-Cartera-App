@@ -1,6 +1,6 @@
 package com.fabiansuarez.micartera.model.entity
 
-import com.fabiansuarez.micartera.TypeCategory
+import com.fabiansuarez.micartera.model.enums.TypeCategory
 
 data class Category(
     var id: Int = 0,
