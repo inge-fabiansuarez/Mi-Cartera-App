@@ -3,7 +3,7 @@ package com.fabiansuarez.micartera.model.repository
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.fabiansuarez.micartera.model.entity.Account
-import com.fabiansuarez.micartera.util.OnAccountOperationCallback
+import com.fabiansuarez.micartera.util.OnOperationCallback
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -18,7 +18,7 @@ class AccountRepository {
         loadAllAccounts()
     }
 
-    fun add(account: Account, callback: OnAccountOperationCallback? = null) {
+    fun add(account: Account, callback: OnOperationCallback? = null) {
         firestore.collection(ACCOUNT_COLLECTION).add(account).addOnSuccessListener {
             callback?.let {
                 it.onAccountAdded()

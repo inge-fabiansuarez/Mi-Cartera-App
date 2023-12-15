@@ -1,6 +1,6 @@
 package com.fabiansuarez.micartera.util
 
-interface OnAccountOperationCallback {
+interface OnOperationCallback {
     fun onAccountAdded()
     fun onAccountAddError(error: Exception)
 }

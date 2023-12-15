@@ -62,4 +62,7 @@
     <string name="debit_card">Tarjeta Debito</string>
     <string name="saved">Saved!!!</string>
     <string name="error">Error!!!</string>
+    <string name="new_category">New Category</string>
+    <string name="category_type">Category Type</string>
+    <string name="add_new_category">Add new Category</string>
 </resources>

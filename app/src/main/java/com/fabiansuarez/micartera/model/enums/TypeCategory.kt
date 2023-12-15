@@ -1,5 +1,5 @@
 package com.fabiansuarez.micartera.model.enums
 
-enum class TypeCategory {
-    SPENT, INCOME
+enum class TypeCategory(val displayName: String) {
+    SPENT("Spent"), INCOME("Income")
 }

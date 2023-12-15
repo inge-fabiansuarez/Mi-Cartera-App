@@ -8,7 +8,9 @@ import android.widget.ImageView
 import androidx.databinding.BindingAdapter
 import androidx.databinding.InverseMethod
 import com.fabiansuarez.micartera.model.enums.TypeAccount
+import com.fabiansuarez.micartera.model.enums.TypeCategory
 import com.fabiansuarez.micartera.viewmodel.AccountFormActivityViewModel
+import com.fabiansuarez.micartera.viewmodel.CategoryFormActivityViewModel
 import kotlin.math.log
 
 //import com.bumptech.glide.Glide

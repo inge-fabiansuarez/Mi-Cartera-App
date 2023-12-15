@@ -7,7 +7,7 @@ import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
 import com.fabiansuarez.micartera.R
 import com.fabiansuarez.micartera.databinding.ActivityAccountFormBinding
-import com.fabiansuarez.micartera.util.OnAccountOperationCallback
+import com.fabiansuarez.micartera.util.OnOperationCallback
 import com.fabiansuarez.micartera.viewmodel.AccountFormActivityViewModel
 
 class AccountFormActivity : AppCompatActivity() {
@@ -19,7 +19,7 @@ class AccountFormActivity : AppCompatActivity() {
         //setContentView(R.layout.activity_account_form)
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_account_form)
-        viewModel.callback = object : OnAccountOperationCallback {
+        viewModel.callback = object : OnOperationCallback {
             override fun onAccountAdded() {
                 Toast.makeText(
                     applicationContext,
