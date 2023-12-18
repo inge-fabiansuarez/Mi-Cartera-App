@@ -78,4 +78,9 @@
     <string name="password">Password</string>
     <string name="register">Register</string>
     <string name="confirmation_password">Confirmation Password</string>
+    <string name="user_account_was_created_succeful">User account was created succeful</string>
+    <string name="please_fill_out_all_fields_correctly">Please fill out all fields correctly</string>
+    <string name="invalid_credencials_msg">Invalid Credencials</string>
+    <string name="sign_in_succeful">Sign In succeful</string>
+    <string name="error_credenciales">error_credenciales</string>
 </resources>

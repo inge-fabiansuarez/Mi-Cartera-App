@@ -28,7 +28,7 @@ class AccountFormActivity : AppCompatActivity() {
                 finish()
             }
 
-            override fun onAccountAddError(error: Exception) {
+            override fun onAccountAddError(error: String) {
                 Toast.makeText(
                     applicationContext,
                     applicationContext.getString(R.string.error), Toast.LENGTH_SHORT

@@ -25,7 +25,7 @@ class AccountRepository {
             }
         }.addOnFailureListener { exception ->
             callback?.let {
-                it.onAccountAddError(exception)
+                it.onAccountAddError(exception.message.toString())
             }
         }
     }

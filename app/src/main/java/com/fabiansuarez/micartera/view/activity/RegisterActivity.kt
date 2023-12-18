@@ -1,57 +1,52 @@
 package com.fabiansuarez.micartera.view.activity
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
+import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
 import com.fabiansuarez.micartera.R
-import com.fabiansuarez.micartera.databinding.ActivityLoginBinding
+import com.fabiansuarez.micartera.databinding.ActivityRegisterBinding
 import com.fabiansuarez.micartera.util.OnOperationCallback
-import com.fabiansuarez.micartera.viewmodel.LoginActivityViewModel
+import com.fabiansuarez.micartera.viewmodel.RegisterActivityViewModel
 
-class LoginActivity : AppCompatActivity() {
+class RegisterActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityLoginBinding
-    private val viewModel: LoginActivityViewModel by viewModels()
+    private lateinit var binding: ActivityRegisterBinding
+    private val viewModel: RegisterActivityViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //setContentView(R.layout.activity_login)
+        //setContentView(R.layout.activity_register)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_register)
 
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_login)
+        viewModel.nameError.value = "estas aqui"
 
-        binding.btnRegisterLogin.setOnClickListener {
-            startActivity(Intent(applicationContext, RegisterActivity::class.java))
-        }
-
+        viewModel.nameError.observe(this) { it?.let { binding.etNameRegister.error = it } }
         viewModel.emailError.observe(this) { it?.let { binding.etEmail.error = it } }
         viewModel.passwordError.observe(this) { it?.let { binding.etPass.error = it } }
+        viewModel.passwordConfirmationError.observe(this
+        ) { it?.let { binding.etPassConfirmation.error = it } }
 
-        binding.btnLogin.setOnClickListener {
+
+        binding.btnRegister.setOnClickListener {
             if (viewModel.isFormValid()) {
-                viewModel.login(object : OnOperationCallback {
+                viewModel.register(object : OnOperationCallback {
                     override fun onAccountAdded() {
                         Toast.makeText(
                             applicationContext,
-                            getString(R.string.sign_in_succeful),
+                            getString(R.string.user_account_was_created_succeful),
                             Toast.LENGTH_SHORT
                         ).show()
                         finish()
-                        startActivity(Intent(applicationContext, MainActivity::class.java))
                     }
 
                     override fun onAccountAddError(error: String) {
                         Toast.makeText(
                             applicationContext,
-                            getString(R.string.invalid_credencials_msg),
-                            Toast.LENGTH_SHORT
+                            applicationContext.getString(R.string.error), Toast.LENGTH_SHORT
                         ).show()
-                        Log.i(getString(R.string.error_credenciales), error)
                     }
-
-
                 })
             } else {
                 Toast.makeText(
@@ -60,9 +55,15 @@ class LoginActivity : AppCompatActivity() {
                     Toast.LENGTH_SHORT
                 ).show()
             }
+
         }
 
         binding.viewModel = viewModel
 
+
+    }
+
+    fun finish(view: View) {
+        finish()
     }
 }

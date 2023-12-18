@@ -2,11 +2,8 @@ package com.fabiansuarez.micartera.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
-import com.fabiansuarez.micartera.model.entity.Account
 import com.fabiansuarez.micartera.model.entity.Category
-import com.fabiansuarez.micartera.model.enums.TypeAccount
 import com.fabiansuarez.micartera.model.enums.TypeCategory
-import com.fabiansuarez.micartera.model.repository.AccountRepository
 import com.fabiansuarez.micartera.model.repository.CategoryRepository
 import com.fabiansuarez.micartera.util.OnOperationCallback
 
@@ -27,7 +24,7 @@ class CategoryFormActivityViewModel(application: Application) : AndroidViewModel
                 }
             }
 
-            override fun onAccountAddError(error: Exception) {
+            override fun onAccountAddError(error: String) {
                 callback?.let {
                     it.onAccountAdded()
                 }

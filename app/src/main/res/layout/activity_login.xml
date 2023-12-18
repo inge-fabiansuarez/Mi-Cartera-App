@@ -5,6 +5,10 @@
 
     <data>
 
+        <variable
+            name="view_model"
+            type="com.fabiansuarez.micartera.viewmodel.LoginActivityViewModel" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -50,14 +54,14 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/constraintLayout"
             app:layout_constraintVertical_bias="0.8"
-            app:layout_constraintWidth_percent=".8">
+            app:layout_constraintWidth_percent=".9">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintWidth_percent=".8"
+                app:layout_constraintWidth_percent=".9"
                 tools:layout_editor_absoluteY="377dp">
 
                 <ScrollView
@@ -79,13 +83,14 @@
                             android:layout_marginTop="30dp"
                             android:background="@drawable/shape_et_login"
                             android:ems="10"
+                            android:text="@={view_model.user.email}"
                             android:hint="@string/email"
                             android:inputType="textEmailAddress"
                             android:padding="10dp"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/textView"
-                            app:layout_constraintWidth_percent="0.8" />
+                            app:layout_constraintWidth_percent="0.9" />
 
                         <EditText
                             android:id="@+id/et_pass"
@@ -95,12 +100,13 @@
                             android:background="@drawable/shape_et_login"
                             android:ems="10"
                             android:hint="@string/password"
+                            android:text="@={view_model.password}"
                             android:inputType="numberPassword"
                             android:padding="10dp"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/et_email"
-                            app:layout_constraintWidth_percent="0.8" />
+                            app:layout_constraintWidth_percent="0.9" />
 
                         <Button
                             android:id="@+id/btn_login"
@@ -114,7 +120,7 @@
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/et_pass"
-                            app:layout_constraintWidth_percent="0.5" />
+                            app:layout_constraintWidth_percent="0.7" />
 
                         <Button
                             android:id="@+id/btn_register_login"
@@ -122,13 +128,13 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="25dp"
                             android:background="@drawable/shape_btn_primary"
-                            android:text="@string/register"
                             android:onClick="clickRegister"
+                            android:text="@string/register"
                             android:textColor="@color/white"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/btn_login"
-                            app:layout_constraintWidth_percent="0.5" />
+                            app:layout_constraintWidth_percent="0.7" />
 
                         <TextView
                             android:id="@+id/textView"

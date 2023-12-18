@@ -25,7 +25,7 @@ class AccountFormActivityViewModel(application: Application) : AndroidViewModel(
                 }
             }
 
-            override fun onAccountAddError(error: Exception) {
+            override fun onAccountAddError(error: String) {
                 callback?.let {
                     it.onAccountAdded()
                 }
