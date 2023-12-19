@@ -27,7 +27,7 @@ class RegisterActivityViewModel(application: Application) : AndroidViewModel(app
 
             override fun onAccountAddError(error: String) {
                 callback?.let {
-                    it.onAccountAdded()
+                    it.onAccountAddError(error)
                 }
             }
 

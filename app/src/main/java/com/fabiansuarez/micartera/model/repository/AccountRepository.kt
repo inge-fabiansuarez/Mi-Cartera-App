@@ -14,6 +14,7 @@ class AccountRepository {
     var accounts: MutableLiveData<List<Account>> = MutableLiveData()
 
     private val firestore: FirebaseFirestore = Firebase.firestore
+
     init {
         loadAllAccounts()
     }

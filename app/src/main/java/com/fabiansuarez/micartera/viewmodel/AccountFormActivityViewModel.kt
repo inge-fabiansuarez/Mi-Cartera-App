@@ -6,12 +6,22 @@ import com.fabiansuarez.micartera.model.enums.TypeAccount
 import com.fabiansuarez.micartera.model.entity.Account
 import com.fabiansuarez.micartera.model.repository.AccountRepository
 import com.fabiansuarez.micartera.util.OnOperationCallback
+import com.google.firebase.Firebase
+import com.google.firebase.auth.auth
 
 
 class AccountFormActivityViewModel(application: Application) : AndroidViewModel(application) {
 
     private val accountRepository = AccountRepository()
     var account: Account = Account()
+
+    private val auth = Firebase.auth
+    private val currentUser = auth.currentUser
+
+
+    init {
+        account.userId = currentUser?.uid ?: "Anonimo"
+    }
 
     // Lista de opciones del enumerado
     var accountTypes: List<TypeAccount> = TypeAccount.values().toList()

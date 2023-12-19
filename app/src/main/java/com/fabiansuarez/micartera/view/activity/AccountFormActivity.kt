@@ -9,14 +9,20 @@ import com.fabiansuarez.micartera.R
 import com.fabiansuarez.micartera.databinding.ActivityAccountFormBinding
 import com.fabiansuarez.micartera.util.OnOperationCallback
 import com.fabiansuarez.micartera.viewmodel.AccountFormActivityViewModel
+import com.google.firebase.Firebase
+import com.google.firebase.auth.auth
 
 class AccountFormActivity : AppCompatActivity() {
 
     private val viewModel: AccountFormActivityViewModel by viewModels()
     private lateinit var binding: ActivityAccountFormBinding
+
+    private val auth = Firebase.auth
+    private val currentUser = auth.currentUser
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //setContentView(R.layout.activity_account_form)
+
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_account_form)
         viewModel.callback = object : OnOperationCallback {

@@ -6,6 +6,8 @@ import com.fabiansuarez.micartera.model.entity.Category
 import com.fabiansuarez.micartera.model.enums.TypeCategory
 import com.fabiansuarez.micartera.model.repository.CategoryRepository
 import com.fabiansuarez.micartera.util.OnOperationCallback
+import com.google.firebase.Firebase
+import com.google.firebase.auth.auth
 
 class CategoryFormActivityViewModel(application: Application) : AndroidViewModel(application) {
 
@@ -15,6 +17,14 @@ class CategoryFormActivityViewModel(application: Application) : AndroidViewModel
     // Lista de opciones del enumerado
     var categoryTypes: List<TypeCategory> = TypeCategory.values().toList()
     var callback: OnOperationCallback? = null
+
+    private val auth = Firebase.auth
+    private val currentUser = auth.currentUser
+
+
+    init {
+        category.userId = currentUser?.uid ?: "Anonimo"
+    }
 
     fun onSaveButtonClick() {
         categoryRepository.add(category, object : OnOperationCallback {
@@ -33,7 +43,7 @@ class CategoryFormActivityViewModel(application: Application) : AndroidViewModel
         })
     }
 
-    public fun onTypeCategorySelected(selectedType: TypeCategory) {
+    fun onTypeCategorySelected(selectedType: TypeCategory) {
         category?.let {
             it.typeCategory = selectedType
         }
